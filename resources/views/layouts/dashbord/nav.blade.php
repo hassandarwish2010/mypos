@@ -59,6 +59,11 @@
         <li><a href="{{ route('dashbord.users.index') }}"><i class="fa fa-users"></i> {{ trans('site.users') }}</a></li>
         @endif
 
+
+        @if(auth()->user()->hasPermission('read-categories'))
+        <li><a href="{{ route('dashbord.categories.index') }}"><i class="fa fa-users"></i> {{ trans('site.categories') }}</a></li>
+        @endif
+
   {{--      <li class=" treeview">
             <a href="#">
               <i class="fa fa-users"></i> <span>{{trans('admin.admin_account')  }}</span>
